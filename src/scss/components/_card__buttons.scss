@@ -1,0 +1,40 @@
+@use 'sass:color';
+
+.card {
+  &__tip-amounts {
+    background-color: color.scale(#c7efff, $lightness: 25%);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  &__tip-button {
+    width: 18%;
+    aspect-ratio: 16/7;
+    padding: 10px 0;
+    background-color: #fff;
+    color: color.scale(#c7efff, $lightness: -55%);
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 1.25rem;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+
+    transition: all 0.2s ease-in;
+
+    &:hover,
+    &.active {
+      background-color: color.scale(#c7efff, $lightness: -55%);
+      color: #fff;
+    }
+
+    &:focus,
+    &:focus-visible,
+    &:active {
+      // outline: 2px solid #dbfff4;
+      border: 2px solid color.scale(#c7efff, $lightness: -55%);      
+      border-radius: 10px;
+      outline: none;
+    }
+  }
+}

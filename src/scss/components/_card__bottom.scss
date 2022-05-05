@@ -1,0 +1,41 @@
+.card {
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+
+    .calc {
+      margin-left: auto;
+      font-size: 1.25rem;
+      padding: 0.5em 1.5em;
+      border-radius: 10px;
+      border: 2px solid transparent;
+      background-color: rgb(255, 133, 63);
+      color: white;
+      font-family: 'Roboto Mono', sans-serif;
+      cursor: pointer;
+
+      transition: all 0.2s ease-in;
+
+      @media screen and(min-width: 600px) {
+        padding: 0.5em 3em;
+      }
+
+      &:hover,
+      &.active {
+        background-color: white;
+        color: rgb(255, 133, 63);
+        border: 2px solid rgb(255, 133, 63);
+      }
+
+      &:focus,
+      &:focus-visible,
+      &:active {
+        // outline: 2px solid #dbfff4;
+        border: 2px solid rgb(255, 133, 63);
+        border-radius: 10px;
+        outline: none;
+      }
+    } 
+  }
+}

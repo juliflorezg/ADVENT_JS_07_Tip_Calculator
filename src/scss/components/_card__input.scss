@@ -1,0 +1,124 @@
+@use 'sass:color';
+
+.card {
+  &__input {
+    position: relative;
+    display: flex;
+    padding: 40px 0;
+    background-color: color.scale(#c7efff, $lightness: 75%);
+
+    &::before{
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 60%;
+      width: 3px;
+      height: 100%;
+      background-color: color.scale(#c7efff, $lightness: 25%);
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+
+    div:first-child {
+      position: relative;
+      width: 60%;
+
+      &::before {
+        position: absolute;
+        content: '';
+        // top: 10%;
+        left: 12%;
+        width: 20px;
+        aspect-ratio: 9/16;
+        color: teal;
+        background-image: url('../images/dollar.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 2;
+
+        @media screen and (min-width: 600px) {
+          top: 10%;
+          width: 25px;
+        }
+      }
+    }
+    div:last-child {
+      width: 40%;
+      position: relative;
+      // border-left: 2px solid color.scale(#dbfff4, $lightness: -10%);
+
+      &::before {
+        position: absolute;
+        content: '';
+        left: 12%;
+        width: 25px;
+        aspect-ratio: 9/16;
+        background-image: url('../images/people.svg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 2;
+
+        @media screen and (min-width: 600px) {
+          // left: 12%;
+          width: 35px;
+        }
+      }
+    }
+
+    input {
+      // appearance: none;
+      position: relative;
+      border: 0;
+      border-bottom: 3px dotted color.scale(grey, $lightness: 60%);
+      // outline: 3px dotted grey;
+      padding-left: 20%;
+      // padding-left: 100%;
+      width: 80%;
+      font-size: 2rem;
+      font-family: 'Roboto Mono', sans-serif;
+      font-family: 'Inter', sans-serif;
+
+      background-color: color.scale(#c7efff, $lightness: 75%);
+
+      &:focus,
+      &:focus-visible,
+      &:active {
+        outline: 2px solid #dbfff4;
+        outline: 2px solid color.scale(#dbfff4, $lightness: -10%);
+        border-radius: 10px;
+        // outline: none;
+      }
+
+      &#billAmount {
+        // background-color: red;
+        padding-left: 17%;
+
+        @media screen and (min-width: 600px) {
+        padding-left: 20%;
+          
+        }
+      }
+
+      &#numberOfPeople {
+        // background-color: red;
+        padding-left: 33%;
+      }
+
+      @media screen and(min-width:600px) {
+        font-size: 2.75rem;
+      }
+    }
+
+    label {
+      text-align: center;
+      // font-size: .9rem;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+.card {
+  &__top {
+    // background-color: red;
+
+    article {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+      padding: 20px 0;
+      font-size: 1.15rem;
+
+      &:first-child {
+        border-bottom: 3px solid #dbfff4;
+        margin-bottom: 15px;
+      }
+
+      .card__tip-amount,
+      .card__total-amount {
+        position: relative;
+        font-size: 3.5rem;
+        font-weight: 700;
+
+        &::before {
+          position: absolute;
+          content: '$';
+          top: -5%;
+          left: -1ch;
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}
